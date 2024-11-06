@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muzej Nikole Tesle</title>
+    <link
+      rel="icon"
+      href="/Slike/Nikola-Tesla.webp"
+      type="image/png"
+      sizes="16x16"
+    />
+    <style>
+      #map {
+        width: 40%;
+        height: 500px;
+        border: 2px solid #ccc;
+      }
+
+      aside {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      ul {
+        list-style-type: circle;
+        padding-left: 0;
+      }
+
+      header {
+        position: relative;
+        left: 200px;
+        text-decoration: underline;
+      }
+
+      body {
+        background-image: url("Slike/Nikola-Tesla.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 1;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: large;
+        text-shadow: 1px 1px rgb(214, 231, 59);
+        color: rgba(0, 0, 0, 0.658);
+        text-align: center;
+      }
+
+      h1,
+      h2 {
+        text-shadow: 1px 1px rgb(214, 231, 59);
+        color: rgba(3, 3, 3, 0.8);
+      }
+
+      .content-wrapper {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      #map {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .table-container {
+        width: 100%;
+        margin-bottom: 20px;
+
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 10px 0;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Muzej Nikole Tesle</h1>
+
+    <aside>
+      <nav>
+        <ul>
+          <li><a href="index.html">Glavna Stranica</a></li>
+          <li><a href="./galerija.html">Galerija</a></li>
+          <li><a href="./mapa.html">Mapa</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content-wrapper">
+      <div class="table-container">
+        <h2>Cena Karte u muzeju:</h2>
+        <table>
+          <tr>
+            <th>Pojedinacna ulaznica za vodjenu turu na srpskom</th>
+            <th>400 RSD</th>
+          </tr>
+          <tr>
+            <th>
+              Grupna ulaznica za vodjenu turu na srpskom (više od 10 ljudi)
+            </th>
+            <th>250 RSD</th>
+          </tr>
+          <tr>
+            <th>Pojedinacna ulaznica za vodjenu turu na engleskom</th>
+            <th>800 RSD</th>
+          </tr>
+          <tr>
+            <th>
+              Grupna ulaznica za vodjenu turu na engleskom (više od 10 ljudi)
+            </th>
+            <th>500 RSD</th>
+          </tr>
+        </table>
+
+        <h2>Radno vreme:</h2>
+        <table>
+          <tr>
+            <th>Ponedeljak</th>
+            <th>10:00-20:00</th>
+          </tr>
+          <tr>
+            <th>Utorak</th>
+            <th>10:00-20:00</th>
+          </tr>
+          <tr>
+            <th>Sreda</th>
+            <th>10:00-20:00</th>
+          </tr>
+          <tr>
+            <th>Četvrtak</th>
+            <th>10:00-20:00</th>
+          </tr>
+          <tr>
+            <th>Petak</th>
+            <th>10:00-20:00</th>
+          </tr>
+          <tr>
+            <th>Subota</th>
+            <th>10:00-20:00</th>
+          </tr>
+          <tr>
+            <th>Nedelja</th>
+            <th>10:00-20:00</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="map">
+      <script
+        async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFovzQWzXTTNdwl3RavUu2X5t32DtUO6I&callback=initMap"
+      ></script>
+      <script>
+        function initMap() {
+          var teslaMuseum = { lat: 44.806, lng: 20.4651 };
+          var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: teslaMuseum,
+          });
+          var marker = new google.maps.Marker({
+            position: teslaMuseum,
+            map: map,
+            title: "Muzej Nikole Tesle",
+          });
+        }
+      </script>
+    </div>
+    <br><br>
+    <footer>
+        &copy; 2024 Muzej Nikole Tesle. Sva prava zadržana.
+    </footer>
+  </body>
+</html>
